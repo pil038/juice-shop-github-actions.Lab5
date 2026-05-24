@@ -27,10 +27,10 @@ jobs:
         with:
           dockerfile: Dockerfile
 
-      - name: Build Docker image
-        continue-on-error: true
+      - name: Pull Docker image
         run: |
-          docker build -t juice-shop:${{ github.sha }} . || true
+          docker pull bkimminich/juice-shop:latest
+          docker tag bkimminich/juice-shop:latest juice-shop:${{ github.sha }}
 
       - name: Scan image (Trivy)
         uses: aquasecurity/trivy-action@master
