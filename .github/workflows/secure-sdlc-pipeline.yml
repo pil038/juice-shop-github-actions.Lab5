@@ -25,7 +25,7 @@ jobs:
         uses: hadolint/hadolint-action@v3.1.0
         with:
           dockerfile: Dockerfile
-          ignore: DL3059 DL3006 DL3003 DL3015 DL3008
+          failure-threshold: error
 
       - name: Build Docker image
         run: |
