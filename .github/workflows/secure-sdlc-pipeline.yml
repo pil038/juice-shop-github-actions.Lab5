@@ -39,7 +39,7 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - name: Run Dockle
-        uses: goodwithtech/dockle-action@v3
+        uses: goodwithtech/dockle-action@v0.1.2
         with:
           image: 'juice-shop:${{ github.sha }}'
           format: list
